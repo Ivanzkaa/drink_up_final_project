@@ -42,6 +42,7 @@ Here is a little preview of our main feature, the swiping through
 
 Here is a simple flow for the user experience on PuppR:
 
+![Screenshot from 2023-01-27 12-26-02](https://user-images.githubusercontent.com/105127608/217574857-e5ea69c9-10b8-4a69-b032-b508756facae.png)
 
 
 ## Run DrinkUp! with React.js 
@@ -57,6 +58,7 @@ We'll be using nmp
 * Issue when viewing on mobile. Many of the assets become squished vertically.
 
 # Architecture
+![DrinkUp!_MVP_specification](https://user-images.githubusercontent.com/105127608/217574534-b5948486-e592-477b-9277-5f560e341637.jpg)
 
 ## Overview
 Our web app is a single-page app, coded mainly in Javascript. **DrinkUp!** is front-end heavy, meaning that we focused our time and energy in developping a simple but easy to use and fun app. We designed most of the User Interface, using plain CSS and some native Vue transitions and animations. We also incorporated some BootstrapVue elements which offered a simple solution for some features like image uploading.
