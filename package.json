@@ -1,0 +1,23 @@
+{
+  "name": "drink_up_final_project",
+  "version": "1.0.0",
+  "description": "Be the new cocktail star!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ivanzkaa/drink_up_final_project.git"
+  },
+  "keywords": [],
+  "author": "Ivanzka Rodriguez, Angeira Quiles, Sara Cruz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ivanzkaa/drink_up_final_project/issues"
+  },
+  "homepage": "https://github.com/Ivanzkaa/drink_up_final_project#readme",
+  "dependencies": {
+    "firebase": "^9.17.1"
+  }
+}
