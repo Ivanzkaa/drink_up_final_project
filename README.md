@@ -7,7 +7,7 @@
 ## The Project
  **DrinkUp!**.
 
-[**DrinUp!**]() is
+[**DrinKUp!**]() is
 
 Other features include: 
 
@@ -43,7 +43,7 @@ Here is a simple flow for the user experience on PuppR:
 
 
 
-## Run PuppR with Vue-CLI
+## Run DrinkUp! with React.js 
 Installing the programs necessary to view this project is pretty simple!
 
 We'll be using nmp 
