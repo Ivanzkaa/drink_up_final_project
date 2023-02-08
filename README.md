@@ -1,6 +1,7 @@
 # Drink Up! ~ *Be the New Cocktail star*
 
 
+![Drink_Uplogo](https://user-images.githubusercontent.com/105127608/217568794-dad07776-650f-4b8d-a1d2-238097ceedc0.png)
 
 # Introduction
 
