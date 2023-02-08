@@ -1,0 +1,238 @@
+/* -- google fonts -- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+/*-- global -- */
+body {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+p {
+    font-size: 1.8em;
+    font-weight: 400;
+    line-height: 24px;
+    color: #4C7A2C;
+    margin: 0;
+    
+}
+/* -- button css -- */
+
+.main-btn {
+    display: inline-block;
+    padding: 0 25px;
+    font-size: 25px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 55px;
+    border: 2px solid #E07E62;
+    border-radius: 5px;
+    background-color: #E07E62;
+    color: #fff;
+}
+
+.main-btn:hover {
+    background-color: #FC917C;
+    color: #fff;
+    border-color: transparent;
+}
+
+/* -- navbar css -- */
+
+.navbar-brand .drink-up-logo {
+    max-width: 225px;
+    border-radius: 50%;
+}
+
+.navbar-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.navbar {
+    position: relative;
+    padding: 20px 0;
+}
+
+.navbar-nav .nav-item {
+    position: relative;
+    margin-left: 40px;
+}
+
+.navbar-nav .nav-item .nav-link {
+    position: relative;
+    padding: 10px 0;
+    font-size: 30px;
+    font-weight: 500;
+    color: #4C7A2C;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #FC917C;
+}
+
+.navbar-nav .nav-item .nav-link::before {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    bottom: 0;
+    left: 50%;
+    background-color: #4C7A2C;
+    opacity: 0;
+    transition: all .3 ease-out 0s;
+}
+
+.navbar-nav .nav-item .nav-link.active::before,
+.navbar-nav .nav-item .nav-link:hover::before {
+    opacity: 1;
+
+}
+
+/* --- home css --- */
+
+.header-hero {
+    position: relative;
+    height: 800px;
+    background-position: bottom center;
+    background-color: #F8C6B3;
+}
+
+.header-hero-content {
+    position: relative;
+}
+
+.header-hero-content .header-title {
+    font-size: 50px;
+    color: #4C7A2C;
+}
+
+.header-hero-content .text {
+    margin-top: 50px;
+    letter-spacing: 4px;
+}
+
+.header-hero-content ul {
+    margin-top: 30px;
+    list-style: none;
+}
+
+.header-image {
+    position: relative;
+    display: flex;
+    height: 800px;
+    padding: 50px 50px 100px 20px;
+    width: 100%;
+}
+
+/* contact form */
+
+.form-area {
+    padding-top: 3%;
+    padding-bottom: 3%;
+    background-color: #F8C6B3;
+}
+
+.row.single-form {
+    box-shadow: 0 2px 20px -5px rgba(0,0,0,0.9);
+    background: #fff;
+}
+
+.left {
+    background: #B0C985;
+    padding: 250px 93px;
+}
+
+.left h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: #4C7A2C;
+    font-weight: 700;
+    font-size: 48px;
+}
+
+.left h2 span {
+    font-weight: 100;
+}
+
+.right {
+    padding: 70px 100px;
+    position: relative;
+}
+
+.right i {
+    position: absolute;
+    font-size: 80px;
+    left: -27px;
+    top: 50%;
+    color: #fff;
+}
+
+.form-control {
+    border: 2px solid #4C7A2C;
+}
+
+.right button {
+    border: none;
+    border-radius: 5px;
+    background: #4C7A2C;
+    width: 180px;
+    padding: 15px 0;
+    display: inline-block;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.right button:hover {
+    background: #B0C985;
+}
+
+/* --- responsivness form --- */
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .right i {
+        top: -52px;
+        transform: rotate(90deg);
+        left: 50%;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .left {
+        padding: 90px 15px;
+        text-align: center;
+    }
+    .left h2 {
+        font-size: 25px;
+    }
+    .right {
+        padding: 25px;
+    }
+    .right i {
+        top: -52px;
+        transform: rotate(90deg);
+        left: 45%;
+    }
+    .right button {
+        width: 150px;
+        padding: 12px 0;
+    }
+}
