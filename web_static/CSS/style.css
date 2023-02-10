@@ -279,7 +279,7 @@ p {
 /* --- about page --- */
 
 .about-section {
-    background: url(/web\ static/images/about-us-cocktail.jpg) no-repeat left;
+    background: url(/web_static/images/about-us-cocktail.jpg) no-repeat left;
     padding: 100px 0;
     margin: 0;
     box-sizing: border-box;
