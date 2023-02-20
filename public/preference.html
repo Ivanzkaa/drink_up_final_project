@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drink up landing page</title>
-    
+    <script type="module" src="src/index.js"></script>
     <!-- font awesome css -->
     <link rel="stylesheet" href="CSS/all.css">
     <link rel="stylesheet" href="CSS/bootstrap.min.css">
@@ -53,92 +53,59 @@
             </div>
         </div> <!-- navbar end -->
     </header>
-
+ 
+    <!-- Select Preference -->
     <form>
-        <!-- Select spirit -->
-        <div class="spirit-section">
-            <div class="inner-container-spirits">
+            <div class="inner-container-preference">
                 <div class="spirit-text">
                     <p class="s-text">
-                        First step, choose your spirit preference
+                        And now, choose your palate preference
                     </p>
-                </div><br><br>
+                </div>
                 <div>
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="Vodka" value="Vodka" />
-                    <label for="Vodka">Vodka
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="Sweet" value="Sweet" />
+                    <label for="Sweet">Sweet
                         <div class="column">
                             <img src="images/vodka-bottle.png" class="bottle-img">
                         </div>
                     </label>
                 </div>
                 <div>
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="Rum" value="Rum" />
-                    <label for="Rum">Rum
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="Sour" value="Sour" />
+                    <label for="Sour">Sour
                         <div class="column">
                             <img src="images/rum-bottle.png" class="bottle-img">
                         </div>
                     </label>
                 </div>
                 <div>
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="Whiskey" value="Whiskey" />
-                    <label for="Whiskey">Whiskey
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="Bitter" value="Bitter" />
+                    <label for="Bitter">Bitter
                         <div class="column">
                             <img src="images/whiskey-bottle.png" class="bottle-img">
                         </div>
                     </label>
                 </div>
                 <div>
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="Gin" value="Gin" />
-                    <label for="Gin">Gin
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="Salty" value="Salty" />
+                    <label for="Salty">Salty
                         <div class="column">
                             <img src="images/gin-bottle.png" class="bottle-img">
                         </div>
                     </label>
                 </div>
                 <div>
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="Tequila" value="Tequila" />
-                    <label for="Tequila">Tequila
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="Spicy" value="Spicy" />
+                    <label for="Spicy">Spicy
                         <div class="column">
                             <img src="images/tequila-bottle.png" class="bottle-img">
                         </div>
                     </label>
                 </div>
             </div>
-        </div>
-        <!-- Submit -->
-        <div>
-            <li><a href="preference.html" id="submit-button1" type="submit" class="btn btn-primary btn-block">Submit</a>
-            </li>
-        </div>
+    <!-- Submit -->
+    <div>
+        <li><a href="selector.html" id="submit-button" type="submit" class="btn btn-primary btn-block">Submit</a></li>
+    </div>
     </form>
-
-
-    <!--USER DATA -->
-    <script>
-        <script type="module" src="src/index.js"></script>
-        
-        //Creating var for user input
-        var spiritBtn = document.querySelector("#submit-button1");
-
-        function SpiritData() {
-            set(ref(db, ), {
-                Spirit: spiritBtn.id
-            })
-        }
-        //Event of click submit
-        spiritBtn.addEventListener('click', SpiritData);
-    </script>
-
-
-
-    <!-- jquery Js -->
-    <script src="JS/jquery-1.12.4.min.js.js"></script>
-    <!-- font awesome js -->
-    <script src="JS/all.js"></script>
-    <!-- Bootsrap Js -->
-    <script src="JS/bootstrap.min.js"></script>
-    <!-- main js -->
-    <script src="JS/main.js"></script>
-</body>
-
-</html>
+    
