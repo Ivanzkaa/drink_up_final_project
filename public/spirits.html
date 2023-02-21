@@ -7,6 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drink up landing page</title>
     <script type="module" src="src/index.js"></script>
+
+        <!-- update the version number as needed -->
+        <script defer src="/__/firebase/9.17.1/firebase-app-compat.js"></script>
+        <!-- include only the Firebase features as you need -->
+        <script defer src="/__/firebase/9.17.1/firebase-auth-compat.js"></script>
+        <script defer src="/__/firebase/9.17.1/firebase-database-compat.js"></script>
+        <script defer src="/__/firebase/9.17.1/firebase-firestore-compat.js"></script>
+        <script defer src="/__/firebase/9.17.1/firebase-functions-compat.js"></script>
+        <script defer src="/__/firebase/9.17.1/firebase-messaging-compat.js"></script>
+        <script defer src="/__/firebase/9.17.1/firebase-storage-compat.js"></script>
+        <script defer src="/__/firebase/9.17.1/firebase-analytics-compat.js"></script>
+        <script defer src="/__/firebase/9.17.1/firebase-remote-config-compat.js"></script>
+        <script defer src="/__/firebase/9.17.1/firebase-performance-compat.js"></script>
+        <!-- 
+          initialize the SDK after all desired features are loaded, set useEmulator to false
+          to avoid connecting the SDK to running emulators.
+        -->
+        <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
     <!-- font awesome css -->
     <link rel="stylesheet" href="CSS/all.css">
     <link rel="stylesheet" href="CSS/bootstrap.min.css">
@@ -44,6 +63,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="contact.html">Contact</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="meet-the-team.html">Meet the team</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -62,47 +84,53 @@
                 <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                 <label class="form-check-label" for="flexRadioDefault1">
                     <div class="column">
-                        <img src="/web_static/images/vodka-bottle.png" class="bottle-img">
+                        <img src="images/vodka-bottle.png" class="bottle-img">
                     </div>
-                    <div class="spirits-msg">
-                        
-                    </div>
+                    <p class="pref-txt">Vodka</p>
                 </label>
             </div>
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
                 <label class="form-check-label" for="flexRadioDefault2">
                     <div class="column">
-                        <img src="/web_static/images/rum-bottle.png" class="bottle-img">
+                        <img src="images/rum-bottle.png" class="bottle-img">
                     </div>
+                    <p class="pref-txt">Rum</p>
                 </label>
             </div>
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                 <label class="form-check-label" for="flexRadioDefault1">
                     <div class="column">
-                        <img src="/web_static/images/whiskey-bottle.png" class="bottle-img">
+                        <img src="images/whiskey-bottle.png" class="bottle-img">
                     </div>
+                    <p class="pref-txt">Whiskey</p>
                 </label>
             </div>
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
                 <label class="form-check-label" for="flexRadioDefault2">
                     <div class="column">
-                        <img src="/web_static/images/gin-bottle.png" class="bottle-img">
+                        <img src="images/gin-bottle.png" class="bottle-img">
                     </div>
+                    <p class="pref-txt">Gin</p>
                 </label>
             </div>
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                 <label class="form-check-label" for="flexRadioDefault1">
                     <div class="column">
-                        <img src="/web_static/images/tequila-bottle.png" class="bottle-img">
+                        <img src="images/tequila-bottle.png" class="bottle-img">
                     </div>
+                    <p class="pref-txt">Tequila</p>
                 </label>
             </div>
+            <a href="preferences.html">
+            <button class="spirits-btn" type="next" value="Next">Next</button>
+            </a>
         </div>
     </div>
+    <div class="clearfix"></div>
 
 
 
