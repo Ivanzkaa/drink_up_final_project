@@ -583,7 +583,3 @@ section {
     bottom: 0;
     left: calc(50% - 25px);
 }
-
-.row {
-    align-items: center;
-}
