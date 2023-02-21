@@ -414,118 +414,6 @@ p {
     clear: both;
 }
 
-/* --- meet the team section --- */
-
-.team {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #B0C985;
-    align-items: center;
-}
-
-a {
-    color: #E07E62;
-}
-
-a:hover {
-    color: #F8C6B3;
-    text-decoration: none;
-}
-
-.team .member .member-img {
-    margin: auto;
-    overflow: hidden;
-    border-radius: 5px;
-    background: #B0C985;
-    align-items: center;
-}
-
-.team .member .member-img {
-    position: relative;
-    overflow: hidden;
-    align-items: center;
-}
-
-.team .member .social {
-    position: absolute;
-    left: 0;
-    bottom: 30px;
-    right: 0;
-    opacity: 0;
-    transition: ease-in-out 0.3s;
-    text-align: center;
-}
-
-.team .member:hover .social {
-    opacity: 1;
-    bottom: 15px;
-}
-
-.team .member .social a {
-    transition: color 0.3s;
-    color: #111111;
-    margin: 0 3px;
-    padding-top: 7px;
-    border-radius: 50px;
-    width: 36px;
-    height: 36px;
-    background: #E07E62;
-    display: inline-block;
-    transition: ease-in-out 0.3s;
-    color: #fff;
-}
-
-.team .member .social a:hover {
-    background: #F8C6B3;
-}
-
-.team .member .social i {
-    font-size: 20px;
-}
-
-.team .member .member-info {
-    padding: 25px 55px;
-}
-
-.team .member .member-info h4 {
-    font-weight: 700;
-    margin-bottom: 5px;
-    font-size: 24px;
-    color: #4C7A2C;
-}
-
-section {
-    padding: 95px 0;
-    overflow: hidden;
-    position: relative;
-}
-
-.section-title {
-    text-align: center;
-    padding-bottom: 30px;
-    position: relative;
-}
-
-.section-title h1 {
-    font-size: 45px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    position: relative;
-    color: #406823;
-}
-
-.section-title h1::after {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 50px;
-    height: 3px;
-    background: #406823;
-    bottom: 0;
-    left: calc(50% - 25px);
-}
-
-
 /* --- Preference section --- */
 
 .pref-btn {
@@ -585,11 +473,6 @@ section {
     margin-bottom: 180px;
 }
 
-.spirit-text {
-    margin-top: 50px;
-    text-align: center;
-    font-size: 30px;
-}
 
 /* --- meet the team section --- */
 
