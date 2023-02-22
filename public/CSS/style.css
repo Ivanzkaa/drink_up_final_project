@@ -1,5 +1,6 @@
 /* -- google fonts -- */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 /*-- global -- */
 body {
     min-height: 100vh;
@@ -28,8 +29,9 @@ p {
     line-height: 24px;
     color: #4C7A2C;
     margin: 0;
-    
+
 }
+
 /* -- button css -- */
 
 .main-btn {
@@ -117,9 +119,9 @@ p {
 
 .header-hero-content {
     position: relative;
-    box-shadow: 0 2px 20px -5px rgba(0,0,0,0.9);
+    box-shadow: 0 2px 20px -5px rgba(0, 0, 0, 0.9);
     background: #B0C985;
-    padding-top:7%;
+    padding-top: 7%;
     padding-left: 10%;
     padding-right: 10%;
     padding-bottom: 7%;
@@ -154,7 +156,7 @@ p {
 
 /* --- responsiveness for header-image --- */
 
-@media screen and (max-width:650px){
+@media screen and (max-width:650px) {
     .header-hero-content {
         background-size: 100%;
         padding: 100px 40px;
@@ -189,7 +191,7 @@ p {
 }
 
 .row.single-form {
-    box-shadow: 0 2px 20px -5px rgba(0,0,0,0.9);
+    box-shadow: 0 2px 20px -5px rgba(0, 0, 0, 0.9);
     background: #fff;
     border-radius: 8px;
 }
@@ -259,17 +261,21 @@ p {
         padding: 90px 15px;
         text-align: center;
     }
+
     .left h2 {
         font-size: 25px;
     }
+
     .right {
         padding: 25px;
     }
+
     .right i {
         top: -52px;
         transform: rotate(90deg);
         left: 45%;
     }
+
     .right button {
         width: 150px;
         padding: 12px 0;
@@ -309,15 +315,16 @@ p {
 }
 
 .text-p {
-    font-size: 23px;
+    font-size: 30px;
     line-height: 30px;
     text-align: justify;
     margin-bottom: 25px;
+    color: #4C7A2C;
 }
 
 /* --- responsive part of the about page --- */
 
-@media screen and (max-width:1000px){
+@media screen and (max-width:1000px) {
     .about-section {
         background-size: 100%;
         padding: 100px 40px;
@@ -333,6 +340,114 @@ p {
 
 .spirit-section {
     background-color: #F8C6B3;
+    padding: 0 6px;
+}
+
+.bottle-img {
+    max-width: 100%;
+    height: auto;
+    margin: 0 10px 0px 20px;
+}
+
+.inner-container-spirits {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 35px;
+    margin-top: 150px;
+    margin-bottom: 180px;
+}
+
+.spirit-text {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 30px;
+    padding: 15px;
+}
+
+.spirits-btn {
+    background-color: #406823;
+    width: 150px;
+    height: 55px;
+    padding: 12px 28px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    padding: 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+/* --- responsive part of the spirits page --- */
+/*
+@media screen and (max-width: 1000px) {
+    .spirit-section {
+        background-size: 100%;
+        padding: 100px 40px;
+    }
+    .inner-container-spirits {
+        width: 100%;
+        max-width: 100%;
+        padding: 24px;
+    }
+}
+*/
+@media only screen and (max-width: 700px) {
+    .inner-container-spirits {
+    width: 100%;
+    margin: 6px 0;
+    padding: 100px 40px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .inner-container-spirits {
+    width: 100%;
+    }
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* --- Preference section --- */
+
+.pref-btn {
+    background-color: #E07E62;
+    width: 150px;
+    height: 55px;
+    padding: 12px 28px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    padding: 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.preference-section {
+    background-color: #B0C985;
+    padding: 0 6px;
+}
+
+.inner-container-pref {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 35px;
+    margin-top: 150px;
+    margin-bottom: 180px;
+}
+
+.preference-text {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 30px;
+    padding: 15px;
 }
 
 .bottle-img {
@@ -357,11 +472,6 @@ p {
     margin-bottom: 180px;
 }
 
-.spirit-text {
-    margin-top: 50px;
-    text-align: center;
-    font-size: 30px;
-}
 
 /* --- meet the team section --- */
 
@@ -471,4 +581,8 @@ section {
     background: #406823;
     bottom: 0;
     left: calc(50% - 25px);
+}
+
+.row {
+    align-items: center;
 }
