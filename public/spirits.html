@@ -6,8 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drink up landing page</title>
+    
     <script type="module" src="src/index.js"></script>
-    <script type="mo" src="src/cocktails.js"></script>
+
+        <!-- update the version number as needed -->
+        <script defer src="/__/firebase/9.17.1/firebase-app-compat.js"></script>
+        <!-- include only the Firebase features as you need -->
+        <script defer src="/__/firebase/9.17.1/firebase-auth-compat.js"></script>
+        <script defer src="/__/firebase/9.17.1/firebase-database-compat.js"></script>
+        <script defer src="/__/firebase/9.17.1/firebase-firestore-compat.js"></script>
+        <script defer src="/__/firebase/9.17.1/firebase-functions-compat.js"></script>
+        <script defer src="/__/firebase/9.17.1/firebase-messaging-compat.js"></script>
+        <script defer src="/__/firebase/9.17.1/firebase-storage-compat.js"></script>
+        <script defer src="/__/firebase/9.17.1/firebase-analytics-compat.js"></script>
+        <script defer src="/__/firebase/9.17.1/firebase-remote-config-compat.js"></script>
+        <script defer src="/__/firebase/9.17.1/firebase-performance-compat.js"></script>
+        <!-- 
+          initialize the SDK after all desired features are loaded, set useEmulator to false
+          to avoid connecting the SDK to running emulators.
+        -->
+        <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
     <!-- font awesome css -->
     <link rel="stylesheet" href="CSS/all.css">
     <link rel="stylesheet" href="CSS/bootstrap.min.css">
@@ -36,8 +55,7 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page"
-                                        href="index.html">Home</a>
+                                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="about.html">About</a>
@@ -46,7 +64,7 @@
                                     <a class="nav-link" href="contact.html">Contact</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="meet-the-team.html">Meet the Team</a>
+                                  <a class="nav-link" href="meet-the-team.html">Meet the team</a>
                                 </li>
                             </ul>
                         </div>
@@ -55,91 +73,110 @@
             </div>
         </div> <!-- navbar end -->
     </header>
-    <div class="spirit-section">
-        <div class="spirit-text">
-            <p class="s-text">
-                First step, choose your spirit preference
-            </p>
+
+    <form action="selector.html" method="get">
+        <!-- Select spirit -->
+        <div class="spirit-section">
+            <div class="inner-container-spirits">
+                <div class="spirit-text">
+                    <p class="s-text">
+                        First step, choose your spirit preference
+                    </p>
+                </div><br><br>
+                <div>
+                    <input type="radio" name="spirit" id="Vodka" value="Vodka"/>
+                    <label for="Vodka">Vodka
+                        <div class="column">
+                            <img src="images/vodka-bottle.png" class="bottle-img">
+                        </div>
+                    </label>
+                </div>
+                <div>
+                    <input type="radio" name="spirit" id="Rum" value="Rum"/>
+                    <label for="Rum">Rum
+                        <div class="column">
+                            <img src="images/rum-bottle.png" class="bottle-img">
+                        </div>
+                    </label>
+                </div>
+                <div>
+                    <input type="radio" name="spirit" id="Whiskey" value="Whiskey"/>
+                    <label for="Whiskey">Whiskey
+                        <div class="column">
+                            <img src="images/whiskey-bottle.png" class="bottle-img">
+                        </div>
+                    </label>
+                </div>
+                <div>
+                    <input type="radio" name="spirit" id="Gin" value="Gin"/>
+                    <label for="Gin">Gin
+                        <div class="column">
+                            <img src="images/gin-bottle.png" class="bottle-img">
+                        </div>
+                    </label>
+                </div>
+                <div>
+                    <input type="radio" name="spirit" id="Tequila" value="Tequila"/>
+                    <label for="Tequila">Tequila
+                        <div class="column">
+                            <img src="images/tequila-bottle.png" class="bottle-img">
+                        </div>
+                    </label>
+                </div>
+            </div>
         </div>
-        <div class="inner-container-spirits">
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                <label class="form-check-label" for="flexRadioDefault1">
+
+        <!-- Select Preference -->
+        <div class="inner-container-pref">
+            <div class="preference-text">
+                <p class="s-text">
+                    And now, choose your palate preference
+                </p>
+            </div>
+            <div>
+                <input type="radio" name="preference" id="Sweet" value="Sweet" />
+                <label for="Sweet">Sweet
                     <div class="column">
-                        <img src="images/vodka-bottle.png" class="bottle-img">
-                    </div>
-                    <div class="spirits-msg">
-                        
+                        <img src="images/sweet-img.png" class="bottle-img">
                     </div>
                 </label>
             </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                <label class="form-check-label" for="flexRadioDefault2">
+            <div>
+                <input type="radio" name="preference" id="Sour" value="Sour" />
+                <label for="Sour">Sour
                     <div class="column">
-                        <img src="images/rum-bottle.png" class="bottle-img">
+                        <img src="images/sour-img.png" class="bottle-img">
                     </div>
                 </label>
             </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                <label class="form-check-label" for="flexRadioDefault1">
+            <div>
+                <input type="radio" name="preference" id="Bitter" value="Bitter" />
+                <label for="Bitter">Bitter
                     <div class="column">
-                        <img src="images/whiskey-bottle.png" class="bottle-img">
+                        <img src="images/bitter-img.png" class="bottle-img">
                     </div>
                 </label>
             </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                <label class="form-check-label" for="flexRadioDefault2">
+            <div>
+                <input type="radio" name="preference" id="Salty" value="Salty" />
+                <label for="Salty">Salty
                     <div class="column">
-                        <img src="images/gin-bottle.png" class="bottle-img">
+                        <img src="images/salty-img.png" class="bottle-img">
                     </div>
                 </label>
             </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                <label class="form-check-label" for="flexRadioDefault1">
+            <div>
+                <input type="radio" name="preference" id="Spicy" value="Spicy" />
+                <label for="Spicy">Spicy
                     <div class="column">
-                        <img src="images/tequila-bottle.png" class="bottle-img">
+                        <img src="images/spicy-img.png" class="bottle-img">
                     </div>
                 </label>
             </div>
         </div>
-    </div>
-
-
-    <!--Spirit form-->    
-    <form action="/action_page.php">
-        <label for="cars">Select a Spirit</Select>:</label>
-        <select name="spirits" id="spirits">
-          <group label="Spirits">
-            <option value="volvo"></option>
-            <option value="volvo">Rum</option>
-            <option value="saab">Vodka</option>
-            <option value="volvo">Tequila</option>
-            <option value="saab">Gin</option>
-            <option value="volvo">Whiskey</option>
-          </group>
-        </select>
-    <!--Spirit form--> 
-        <form action="/action_page.php">
-            <label for="cars">Select a Preference</Select>:</label>
-        <select name="Preference" id="spirits">
-            <group label="Spirits">
-              <option value="volvo"></option>
-              <option value="volvo">Rum</option>
-              <option value="saab">Vodka</option>
-              <option value="volvo">Tequila</option>
-              <option value="saab">Gin</option>
-              <option value="volvo">Whiskey</option>
-            </group>
-          </select>
-        <br><br>
-        <input type="submit" value="Submit">
-      </form>
-       
-
+        <!-- Submit -->
+            <button type="submit">Submit</button>
+    </form>
 
 
 
