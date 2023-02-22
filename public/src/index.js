@@ -40,5 +40,7 @@ function PreferenceData() {
 })
 }
 
+
+
 spiritBtn.addEventListener('click', SpiritData);
 preferenceBtn.addEventListener('click', PreferenceData);

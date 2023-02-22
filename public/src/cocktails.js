@@ -1,71 +1,101 @@
-const search = document.getElementById("search"),
-  submit = document.getElementById("submit"),
-  random = document.getElementById("random"),
-  drinksEl = document.getElementById("drinks"),
-  resultsHeading = document.getElementById("result-heading"),
-  single_drinkEl = document.getElementById("single-drink");
+function getRecipes() {
+  // Retrieve checked values
+  const checkboxes = document.getElementsByName("spirit");
+  const checkedValues = Array.from(checkboxes)
+    .filter((radio) => radio.checked)
+    .map((radio) => radio.value);
 
-// Fetch drink by id
-function getDrinkById(drinkId) {
-    fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drinkId}
-  `)
-      .then((res) => res.json())
-      .then((data) => {
-        const drink = data.drinks[0];
-  
-        addDrinkToDOM(drink);
-        console.log(data);
-      });
-  }
-
-
-// Add drink to DOM
-function addDrinkToDOM(drink) {
-    const ingredients = [];
-  
-    for (let i = 1; i <= 20; i++) {
-      if (drink[`strIngredient${i}`]) {
-        ingredients.push(
-          `${drink[`strIngredient${i}`]} - ${drink[`strMeasure${i}`]}`
-        );
-      } else {
-        break;
-      }
-    }
-
- // Output single drink when clicked
- single_drinkEl.innerHTML = `
- <div class="single-drink">
-   <h1>${drink.strDrink}</h1>
-   <img src="${drink.strDrinkThumb}" alt="${drink.strDrink}"
-   <div class="single-meal-info">
-     ${drink.strCategory ? `<p>${drink.strCategory}</p>` : ""}
-     ${drink.strArea ? `<p>${drink.strArea}</p>` : ""}
-   </div>
-   <div class="main">
-     <p>${drink.strInstructions}</p>
-     <h2>Ingredients</h2>
-     <ul class="ing-list">
-       ${ingredients.map((ing) => `<li>${ing}</li>`).join("")}
-     </ul>
-   </div
- </div>
-`;
-}
-    // Event listeners
-submit.addEventListener("submit", searchDrink);
-random.addEventListener("click", getRandomDrink);
-
-drinksEl.addEventListener("click", (e) => {
-  const drinkInfo = e.path.find((item) => {
-    if (item.classList) {
-      return item.classList.contains("drink-info");
-    } else {
-      return false;
-    }
+  // Loop through JSON file and display recipe for each selected spirit
+  const recipes = {
+    
+    "gin": {
+      "name": "Classic Gin and Tonic",
+      "ingredients": [
+        "1 1/2 oz gin",
+        "4 oz tonic water",
+        "1 lime wedge",
+        "Ice"
+      ],
+      "instructions": [
+        "Fill a highball glass with ice.",
+        "Pour the gin over the ice.",
+        "Add the tonic water and stir gently.",
+        "Squeeze the lime wedge into the drink and drop it in.",
+        "Enjoy!"
+      ]
+    },
+    "tequila": {
+      "name": "Margarita",
+      "ingredients": [
+        "1 1/2 oz tequila",
+        "1 oz lime juice",
+        "1/2 oz triple sec",
+        "Salt for rim (optional)",
+        "Ice"
+      ],
+      "instructions": [
+        "Rim a glass with salt (optional).",
+        "Fill a cocktail shaker with ice.",
+        "Add the tequila, lime juice, and triple sec.",
+        "Shake well.",
+        "Strain into the prepared glass over ice.",
+        "Enjoy!"
+      ]
+    },
+    "rum": {
+      "name": "Daiquiri",
+      "ingredients": [
+        "2 oz rum",
+        "3/4 oz lime juice",
+        "1/2 oz simple syrup",
+        "Ice"
+      ],
+      "instructions": [
+        "Fill a cocktail shaker with ice.",
+        "Add the rum, lime juice, and simple syrup.",
+        "Shake well.",
+        "Strain into a chilled glass.",
+        "Enjoy!"
+      ]
+    },
+    "whiskey": {
+      "name": "Whiskey Sour",
+      "ingredients": [
+        "2 oz whiskey",
+        "3/4 oz lemon juice",
+        "1/2 oz simple syrup",
+        "Ice"
+      ],
+      "instructions": [
+        "Fill a cocktail shaker with ice.",
+        "Add the whiskey, lemon juice, and simple syrup.",
+        "Shake well.",
+        "Strain into a chilled glass.",
+        "Enjoy!"
+      ]
+    },
+    "vodka": {
+      "name": "Cosmopolitan",
+      "ingredients": [
+        "1 1/2 oz vodka",
+        "1 oz cranberry juice",
+        "1/2 oz triple sec",
+        "1/2 oz lime juice",
+        "Ice"
+      ],
+      "instructions": [
+        "Fill a cocktail shaker with ice.",
+        "Add the vodka, cranberry juice, triple sec, and lime juice.",
+        "Shake well.",
+        "Strain into a chilled glass.",
+        "Enjoy!"
+      ]
+    }};
+  checkedValues.forEach((spirit) => {
+    const recipe = recipes[spirit];
+    console.log(`Recipe for ${recipe.name}:`);
+    console.log(`- Ingredients: ${recipe.ingredients.join(", ")}`);
+    console.log(`- Instructions: ${recipe.instructions}`);
   });
-  if (drinkInfo) {
-    const drinkId = drinkInfo.getAttribute("data-drinkid");
-    getDrinkById(drinkId);
-  }
-});
+
+}
