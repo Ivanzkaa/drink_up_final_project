@@ -51,19 +51,24 @@
             </nav>
           </div>
         </div> <!-- navbar end -->
-        
-
-
-        
     </header>
 
+    <!--DATA MANAGE-->
+    <div id="results"></div>
+      <script>
+        const resultsList = document.getElementById('results')
+        new URLSearchParams(window.location.search).forEach((value, 
+        name) => {
+          resultsList.append(`${name}: ${value}`)
+          resultsList.append(document.createElement('br'))
 
+        })
+      </script>
+      <a href="index.html">Go back to Home!</a>
+    
 
-
-
-
-
-
+        
+    
 
 
     <!-- jquery Js -->
