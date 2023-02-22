@@ -74,7 +74,7 @@
         </div> <!-- navbar end -->
     </header>
 
-    <form>
+    <form action="selector.html" method="get">
         <!-- Select spirit -->
         <div class="spirit-section">
             <div class="inner-container-spirits">
@@ -84,7 +84,7 @@
                     </p>
                 </div><br><br>
                 <div>
-                    <input class="form-check-input" type="radio" name="spirit" id="Vodka" value="Vodka" />
+                    <input type="radio" name="spirit" id="Vodka" value="Vodka"/>
                     <label for="Vodka">Vodka
                         <div class="column">
                             <img src="images/vodka-bottle.png" class="bottle-img">
@@ -92,7 +92,7 @@
                     </label>
                 </div>
                 <div>
-                    <input class="form-check-input" type="radio" name="spirit" id="Rum" value="Rum" />
+                    <input type="radio" name="spirit" id="Rum" value="Rum"/>
                     <label for="Rum">Rum
                         <div class="column">
                             <img src="images/rum-bottle.png" class="bottle-img">
@@ -100,7 +100,7 @@
                     </label>
                 </div>
                 <div>
-                    <input class="form-check-input" type="radio" name="spirit" id="Whiskey" value="Whiskey" />
+                    <input type="radio" name="spirit" id="Whiskey" value="Whiskey"/>
                     <label for="Whiskey">Whiskey
                         <div class="column">
                             <img src="images/whiskey-bottle.png" class="bottle-img">
@@ -108,7 +108,7 @@
                     </label>
                 </div>
                 <div>
-                    <input class="form-check-input" type="radio" name="spirit" id="Gin" value="Gin" />
+                    <input type="radio" name="spirit" id="Gin" value="Gin"/>
                     <label for="Gin">Gin
                         <div class="column">
                             <img src="images/gin-bottle.png" class="bottle-img">
@@ -116,7 +116,7 @@
                     </label>
                 </div>
                 <div>
-                    <input class="form-check-input" type="radio" name="spirit" id="Tequila" value="Tequila" />
+                    <input type="radio" name="spirit" id="Tequila" value="Tequila"/>
                     <label for="Tequila">Tequila
                         <div class="column">
                             <img src="images/tequila-bottle.png" class="bottle-img">
@@ -125,45 +125,58 @@
                 </div>
             </div>
         </div>
-        <!-- Submit -->
-        <div>
-            <li><a href="preference.html" id="submit-button1" type="submit" class="btn btn-primary btn-block">Submit</a>
-            </li>
+
+        <!-- Select Preference -->
+        <div class="inner-container-pref">
+            <div class="preference-text">
+                <p class="s-text">
+                    And now, choose your palate preference
+                </p>
+            </div>
+            <div>
+                <input type="radio" name="preference" id="Sweet" value="Sweet" />
+                <label for="Sweet">Sweet
+                    <div class="column">
+                        <img src="images/sweet-img.png" class="bottle-img">
+                    </div>
+                </label>
+            </div>
+            <div>
+                <input type="radio" name="preference" id="Sour" value="Sour" />
+                <label for="Sour">Sour
+                    <div class="column">
+                        <img src="images/sour-img.png" class="bottle-img">
+                    </div>
+                </label>
+            </div>
+            <div>
+                <input type="radio" name="preference" id="Bitter" value="Bitter" />
+                <label for="Bitter">Bitter
+                    <div class="column">
+                        <img src="images/bitter-img.png" class="bottle-img">
+                    </div>
+                </label>
+            </div>
+            <div>
+                <input type="radio" name="preference" id="Salty" value="Salty" />
+                <label for="Salty">Salty
+                    <div class="column">
+                        <img src="images/salty-img.png" class="bottle-img">
+                    </div>
+                </label>
+            </div>
+            <div>
+                <input type="radio" name="preference" id="Spicy" value="Spicy" />
+                <label for="Spicy">Spicy
+                    <div class="column">
+                        <img src="images/spicy-img.png" class="bottle-img">
+                    </div>
+                </label>
+            </div>
         </div>
+        <!-- Submit -->
+            <button type="submit">Submit</button>
     </form>
-
-
-    <!--USER DATA -->
-    <script>
-        import { initializeApp } from 'firebase/app';
-        
-        //Firebase config
-        const firebaseApp = initializeApp({
-            apiKey: "AIzaSyCkVFHVxgQigRuvRNwByMcXzR_q3vxzSWg",
-            authDomain: "drink-up-195cf.firebaseapp.com",
-            databaseURL: "https://drink-up-195cf-default-rtdb.firebaseio.com",
-            projectId: "drink-up-195cf",
-            storageBucket: "drink-up-195cf.appspot.com",
-            messagingSenderId: "49108513412",
-            appId: "1:49108513412:web:ada66590542f189d5b88d1",
-            measurementId: "G-8MWJ6SWSN7"
-        });
-
-        import { getDatabase, set, get, ref } from "firebase/database";
-
-        //Creating var for database
-        const db = getDatabase();
-        //Creating var for user input
-        var spiritBtn = document.querySelector("#submit-button1");
-
-        function SpiritData() {
-            set(ref(db, ), {
-                Spirit: spiritBtn.id
-            })
-        }
-        //Event of click submit
-        spiritBtn.addEventListener('click', SpiritData);
-    </script>
 
 
 
