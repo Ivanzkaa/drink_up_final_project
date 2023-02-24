@@ -107,13 +107,28 @@
         return data.json();
       }).then((completedata)=>{
         console.log(completedata);
+
+        //Display on html
+        let recipeDisplay = document.getElementById("recipeDisplay");
+        let drinkList = completedata;  
+        let html = "";
+
+        drinkList.forEach(drink => {
+          html += "<h2>" + drink.strDrink + "</h2>";
+          html += "<img src='" + drink.strDrinkThumb + "' alt='" + drink.strDrink + "'/>";
+          html += "<p>" + drink.strInstructions + "</p>";
       });
-      
+
+        recipeDisplay.innerHTML = html;
+      });
+
+
 
   </script>
 
   <div id="root"></div>
   <a href="index.html">Go back to Home!</a>
+  <div id="recipeDisplay"></div>
 
 
 
