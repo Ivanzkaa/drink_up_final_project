@@ -55,126 +55,71 @@
   </header>
 
   <!--DATA MANAGE-->
-  <div id="results"></div>
   <script>
-    const resultsList = document.getElementById('results')
-    new URLSearchParams(window.location.search).forEach((value,
-      name) => {
-      resultsList.append(`${name}: ${value}`)
-      resultsList.append(document.createElement('br'))
+    // Create urlParams query string
+    var urlParams = new URLSearchParams(window.location.search);
 
-    })
+    // Get value of single parameter
+    var spirit = urlParams.get('spirit');
+    var preference = urlParams.get('preference');
 
-    function getRecipes(resultsList) {
-      // Retrieve checked values
-      
-   
-       
-       
+    //print var statements
+    //document.write(urlParams);
+    //document.write(spirit);
+    //document.write(preference);
 
-      // Loop through JSON file and display recipe for each selected spirit
-      const recipes = {
+    //variables for API
+    //let url = "https://thecocktaildb.com/api/json/v1/1/filter.php?i=";
+    let drinkName = "";
 
-        "gin": {
-          "name": "Classic Gin and Tonic",
-          "ingredients": [
-            "1 1/2 oz gin",
-            "4 oz tonic water",
-            "1 lime wedge",
-            "Ice"
-          ],
-          "instructions": [
-            "Fill a highball glass with ice.",
-            "Pour the gin over the ice.",
-            "Add the tonic water and stir gently.",
-            "Squeeze the lime wedge into the drink and drop it in.",
-            "Enjoy!"
-          ]
-        },
-        "tequila": {
-          "name": "Margarita",
-          "ingredients": [
-            "1 1/2 oz tequila",
-            "1 oz lime juice",
-            "1/2 oz triple sec",
-            "Salt for rim (optional)",
-            "Ice"
-          ],
-          "instructions": [
-            "Rim a glass with salt (optional).",
-            "Fill a cocktail shaker with ice.",
-            "Add the tequila, lime juice, and triple sec.",
-            "Shake well.",
-            "Strain into the prepared glass over ice.",
-            "Enjoy!"
-          ]
-        },
-        "rum": {
-          "name": "Daiquiri",
-          "ingredients": [
-            "2 oz rum",
-            "3/4 oz lime juice",
-            "1/2 oz simple syrup",
-            "Ice"
-          ],
-          "instructions": [
-            "Fill a cocktail shaker with ice.",
-            "Add the rum, lime juice, and simple syrup.",
-            "Shake well.",
-            "Strain into a chilled glass.",
-            "Enjoy!"
-          ]
-        },
-        "whiskey": {
-          "name": "Whiskey Sour",
-          "ingredients": [
-            "2 oz whiskey",
-            "3/4 oz lemon juice",
-            "1/2 oz simple syrup",
-            "Ice"
-          ],
-          "instructions": [
-            "Fill a cocktail shaker with ice.",
-            "Add the whiskey, lemon juice, and simple syrup.",
-            "Shake well.",
-            "Strain into a chilled glass.",
-            "Enjoy!"
-          ]
-        },
-        "vodka": {
-          "name": "Cosmopolitan",
-          "ingredients": [
-            "1 1/2 oz vodka",
-            "1 oz cranberry juice",
-            "1/2 oz triple sec",
-            "1/2 oz lime juice",
-            "Ice"
-          ],
-          "instructions": [
-            "Fill a cocktail shaker with ice.",
-            "Add the vodka, cranberry juice, triple sec, and lime juice.",
-            "Shake well.",
-            "Strain into a chilled glass.",
-            "Enjoy!"
-          ]
-        }
-      };
-      checkedValues.forEach((spirit) => {
-        const recipe = recipes[spirit];
-        console.log(`Recipe for ${recipe.name}:`);
-        console.log(`- Ingredients: ${recipe.ingredients.join(", ")}`);
-        console.log(`- Instructions: ${recipe.instructions}`);
-      });
+    switch (spirit + preference) {
+      case 'VodkaSweet':
+        drinkName = "Cosmopolitan";
+        document.write(drinkName);
+        break;
+      case 'VodkaSour':
+        drinkName = "Lemon Drop";
+        document.write(drinkName);
+        break;
+      case 'VodkaSalty':
+        drinkName = "Martiny";
+        document.write(drinkName);
+        break;
+      case 'VodkaSpicy':
+        drinkName = "Hot";
+        document.write(drinkName);
+        break;
+      case 'VodkaBitter':
+        drinkName = "Esspresso Martiny";
+        document.log(drinkName);
+        break;
 
+      default:
+        alert('Please select one of each to get your drink!');
+        break;
     }
+    //API
+      let url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
+      let api_url = (url + drinkName);
+
+      fetch(api_url).then((data)=>{
+        //console.log(data);
+        return data.json();
+      }).then((completedata)=>{
+        console.log(completedata);
+      });
+      
+
   </script>
+
+  <div id="root"></div>
   <a href="index.html">Go back to Home!</a>
 
 
 
 
 
-  <script src="cocktail.js"></script>
+
   <!-- jquery Js -->
   <script src="JS/jquery-1.12.4.min.js.js"></script>
   <!-- font awesome js -->
