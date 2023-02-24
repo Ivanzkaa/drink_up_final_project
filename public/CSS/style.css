@@ -7,9 +7,11 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
-    margin-top: 30px;
     font-family: 'Montserrat', sans-serif;
     overflow-x: hidden;
+    height: 100%;
+    background-attachment: fixed;
+    background-color: #F8C6B3;
 }
 
 * {
@@ -45,6 +47,7 @@ p {
     border-radius: 5px;
     background-color: #4C7A2C;
     color: #fff;
+    text-decoration: none;
 }
 
 .main-btn:hover {
@@ -110,10 +113,19 @@ p {
 
 /* --- home css --- */
 
+header {
+    background-color: #fff;
+}
+
+.container {
+    position: relative;
+    min-height: 100%;
+}
+
+
 .header-hero {
     position: relative;
     height: 800px;
-    background-position: bottom center;
     background-color: #F8C6B3;
 }
 
@@ -142,7 +154,7 @@ p {
 }
 
 .header-hero-content ul {
-    margin-top: 30px;
+    margin-top: 50px;
     list-style: none;
 }
 
@@ -152,6 +164,10 @@ p {
     max-width: 100%;
     height: 800px;
     padding: 90px 50px 80px 20px;
+}
+
+.image-1 {
+    border-radius: 5px;
 }
 
 /* --- responsiveness for header-image --- */
@@ -315,7 +331,7 @@ p {
 }
 
 .text-p {
-    font-size: 30px;
+    font-size: clamp(1.2rem, 2vw, 2.1rem);
     line-height: 30px;
     text-align: justify;
     margin-bottom: 25px;
@@ -335,18 +351,36 @@ p {
     }
 }
 
+:root {
+    font-size: 62.5%;
+}
 
+
+@media screen and (min-width: 601px) {
+    .text-p {
+        font-size: 32px
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .text-p {
+        font-size: 20px;
+    }
+}
 /* --- spirits section --- */
 
 .spirit-section {
-    background-color: #F8C6B3;
+    background-color: #B0C985;
     padding: 0 6px;
+    padding-top: 5px;
+    padding-bottom: 10px;
 }
 
 .bottle-img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     margin: 0 10px 0px 20px;
+    object-fit: contain;
 }
 
 .inner-container-spirits {
@@ -358,14 +392,14 @@ p {
 }
 
 .spirit-text {
-    margin-top: 50px;
-    text-align: center;
-    font-size: 30px;
-    padding: 15px;
+    text-align: justify;
+    font-size: 25px;
+    padding: 5px;
+    letter-spacing: 3px;
+    text-indent: 50px;
 }
 
-.spirits-btn {
-    background-color: #406823;
+.btn {
     width: 150px;
     height: 55px;
     padding: 12px 28px;
@@ -377,6 +411,13 @@ p {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    align-items: center;
+}
+
+.btn:hover {
+    background-color: #F8C6B3;
+    color: #fff;
+    border-color: transparent;
 }
 
 /* --- responsive part of the spirits page --- */
@@ -394,7 +435,8 @@ p {
     }
 }
 */
-@media only screen and (max-width: 700px) {
+/*
+@media only screen and (max-width: 1000px) {
     .inner-container-spirits {
     width: 100%;
     margin: 6px 0;
@@ -413,10 +455,17 @@ p {
     display: table;
     clear: both;
 }
+*/
+
+@media only screen and (max-width: 1000px) {
+    .bottle-img {
+        width: 100%;
+    }
+}
 
 /* --- Preference section --- */
 
-.pref-btn {
+.btn {
     background-color: #E07E62;
     width: 150px;
     height: 55px;
@@ -431,9 +480,10 @@ p {
     font-size: 16px;
 }
 
-.preference-section {
+.pref-section {
     background-color: #B0C985;
-    padding: 0 6px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .inner-container-pref {
@@ -442,6 +492,8 @@ p {
     column-gap: 35px;
     margin-top: 150px;
     margin-bottom: 180px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .preference-text {
@@ -479,7 +531,6 @@ p {
 .team {
     font-family: 'Montserrat', sans-serif;
     background-color: #B0C985;
-    align-items: center;
 }
 
 a {
@@ -496,12 +547,11 @@ a:hover {
     overflow: hidden;
     border-radius: 5px;
     background: #B0C985;
-    align-items: center;
+    justify-content: space-between;
 }
 .team .member .member-img {
     position: relative;
     overflow: hidden;
-    align-items: center;
 }
 
 .team .member .social {
@@ -548,7 +598,7 @@ a:hover {
 .team .member .member-info h4 {
     font-weight: 700;
     margin-bottom: 5px;
-    font-size: 24px;
+    font-size: 35px;
     color: #4C7A2C;
 }
 
@@ -565,7 +615,7 @@ section {
 }
 
 .section-title h1 {
-    font-size: 45px;
+    font-size: 65px;
     font-weight: bold;
     margin-bottom: 20px;
     padding-bottom: 20px;
@@ -585,5 +635,98 @@ section {
 }
 
 .row {
-    align-items: center;
+    justify-content: center;
 }
+
+/* --- footer section --- */
+
+.footer {
+    background: #F8C6B3;
+    position: relative;
+    bottom: 2vh;
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+}
+
+.social-icons-container {
+    text-align: center;
+    padding-bottom: 25px;
+    color: #4C7A2C;
+    margin: 1rem 0 3rem 0;
+}
+
+.social-icons-container a {
+    font-size: 25px;
+    color: inherit;
+    border: 1px solid #4C7A2C;
+    border-radius: 50%;
+    width: 43px;
+    height: 43px;
+    line-height: 38px;
+    display: inline-block;
+    text-align: center;
+    margin: 0 8px;
+    opacity: 0.75;
+}
+
+.social-icons-container a:hover {
+    opacity: 0.9;
+}
+
+.social-icons-container, .list-menu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.footer ul {
+    margin-top: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 25px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.footer ul li a {
+    color: #4C7A2C;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.footer ul li {
+    display: inline-block;
+    padding: 0 15px;
+}
+
+.footer ul li a:hover {
+    opacity: 1;
+}
+
+.footer .copyright {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 13px;
+    color: #92a385;
+    width: 100vw;
+    padding: 20px;
+    padding-bottom: 40px;
+}
+
+@media (max-width:1000px) {
+    .footer,
+    .social-icons-container,
+    .list-menu-container {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    }
+    }

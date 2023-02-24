@@ -6,26 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drink up landing page</title>
-    
+
     <script type="module" src="src/index.js"></script>
 
-        <!-- update the version number as needed -->
-        <script defer src="/__/firebase/9.17.1/firebase-app-compat.js"></script>
-        <!-- include only the Firebase features as you need -->
-        <script defer src="/__/firebase/9.17.1/firebase-auth-compat.js"></script>
-        <script defer src="/__/firebase/9.17.1/firebase-database-compat.js"></script>
-        <script defer src="/__/firebase/9.17.1/firebase-firestore-compat.js"></script>
-        <script defer src="/__/firebase/9.17.1/firebase-functions-compat.js"></script>
-        <script defer src="/__/firebase/9.17.1/firebase-messaging-compat.js"></script>
-        <script defer src="/__/firebase/9.17.1/firebase-storage-compat.js"></script>
-        <script defer src="/__/firebase/9.17.1/firebase-analytics-compat.js"></script>
-        <script defer src="/__/firebase/9.17.1/firebase-remote-config-compat.js"></script>
-        <script defer src="/__/firebase/9.17.1/firebase-performance-compat.js"></script>
-        <!-- 
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/9.17.1/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/9.17.1/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/9.17.1/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/9.17.1/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/9.17.1/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/9.17.1/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/9.17.1/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/9.17.1/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/9.17.1/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/9.17.1/firebase-performance-compat.js"></script>
+    <!-- 
           initialize the SDK after all desired features are loaded, set useEmulator to false
           to avoid connecting the SDK to running emulators.
         -->
-        <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
 
     <!-- font awesome css -->
     <link rel="stylesheet" href="CSS/all.css">
@@ -66,9 +66,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="meet-the-team.html">Meet the team</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="meet-the-team.html">Meet the Team</a>
-                                </li>
+
                             </ul>
                         </div>
                     </div>
@@ -82,63 +80,80 @@
         <div class="spirit-section">
             <div class="inner-container-spirits">
                 <div class="spirit-text">
-                    <p class="s-text">
+                    <p>
                         First step, choose your spirit preference
                     </p>
-                </div><br><br>
+                </div>
                 <div>
                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="Vodka" value="Vodka" />
-                    <label for="Vodka">Vodka
+                    <label>
                         <div class="column">
                             <img src="images/vodka-bottle.png" class="bottle-img">
                         </div>
+                        <p class="bottle-txt">
+                            Vodka
+                        </p>
                     </label>
                 </div>
                 <div>
                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="Rum" value="Rum" />
-                    <label for="Rum">Rum
+                    <label>
                         <div class="column">
                             <img src="images/rum-bottle.png" class="bottle-img">
                         </div>
+                        <p class="bottle-txt">
+                            Rum
+                        </p>
                     </label>
                 </div>
                 <div>
                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="Whiskey" value="Whiskey" />
-                    <label for="Whiskey">Whiskey
+                    <label>
                         <div class="column">
                             <img src="images/whiskey-bottle.png" class="bottle-img">
                         </div>
+                        <p class="bottle-txt">
+                            Whiskey
+                        </p>
                     </label>
                 </div>
                 <div>
                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="Gin" value="Gin" />
-                    <label for="Gin">Gin
+                    <label>
                         <div class="column">
                             <img src="images/gin-bottle.png" class="bottle-img">
                         </div>
+                        <p class="bottle-txt">
+                            Gin
+                        </p>
                     </label>
                 </div>
                 <div>
                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="Tequila" value="Tequila" />
-                    <label for="Tequila">Tequila
+                    <label>
                         <div class="column">
                             <img src="images/tequila-bottle.png" class="bottle-img">
                         </div>
+                        <p class="bottle-txt">
+                            Tequila
+                        </p>
                     </label>
                 </div>
+                <!-- Submit -->
+                <div>
+                    <a href="preference.html" id="submit-button1" type="submit"
+                        class="btn btn-primary btn-block">Submit</a>
+                </div>
             </div>
-        </div>
-        <!-- Submit -->
-        <div>
-            <li><a href="preference.html" id="submit-button1" type="submit" class="btn btn-primary btn-block">Submit</a>
-            </li>
         </div>
     </form>
 
 
     <!--USER DATA -->
     <script>
-        import { initializeApp } from 'firebase/app';
+        import {
+            initializeApp
+        } from 'firebase/app';
 
         //Firebase config
         const firebaseApp = initializeApp({
@@ -152,7 +167,12 @@
             measurementId: "G-8MWJ6SWSN7"
         });
 
-        import { getDatabase, set, get, ref } from "firebase/database";
+        import {
+            getDatabase,
+            set,
+            get,
+            ref
+        } from "firebase/database";
 
         //Creating var for database
         const db = getDatabase();
