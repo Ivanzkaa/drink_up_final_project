@@ -113,10 +113,10 @@
         let drinkList = completedata;  
         let html = "";
 
-        drinkList.forEach(drink => {
-          html += "<h2>" + drink.strDrink + "</h2>";
-          html += "<img src='" + drink.strDrinkThumb + "' alt='" + drink.strDrink + "'/>";
-          html += "<p>" + drink.strInstructions + "</p>";
+        drinkList.forEach(drinks => {
+          html += "<h2>" + drinks.strDrink + "</h2>";
+          html += "<img src='" + drinks.strDrinkThumb + "' alt='" + drinks.strDrink + "'/>";
+          html += "<p>" + drinks.strInstructions + "</p>";
       });
 
         recipeDisplay.innerHTML = html;
