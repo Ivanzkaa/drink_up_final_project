@@ -69,7 +69,7 @@
     //document.write(preference);
 
     //variables for API
-    let url = "https://thecocktaildb.com/api/json/v1/1/filter.php?i=";
+    //let url = "https://thecocktaildb.com/api/json/v1/1/filter.php?i=";
     let drinkName = "";
 
     switch (spirit + preference) {
@@ -98,8 +98,21 @@
         alert('Please select one of each to get your drink!');
         break;
     }
-      //fetch url + drinkname
+    //API
+      let url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
+      let api_url = (url + drinkName);
+
+      fetch(api_url).then((data)=>{
+        //console.log(data);
+        return data.json();
+      }).then((completedata)=>{
+        console.log(completedata);
+      });
+      
+
   </script>
+
+  <div id="root"></div>
   <a href="index.html">Go back to Home!</a>
 
 
