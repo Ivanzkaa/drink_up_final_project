@@ -108,25 +108,35 @@
       }).then((completedata)=>{
         console.log(completedata);
 
+
+
+
         //Display on html
-        let recipeDisplay = document.getElementById("recipeDisplay");
-        let drinkList = completedata;  
-        let html = "";
+        //let recipeDisplay = document.getElementById("recipeDisplay");
+       // let drinkList = completedata;  
+        //let html = "";
 
-        drinkList.forEach(drinks => {
-          html += "<h2>" + drinks.strDrink + "</h2>";
-          html += "<img src='" + drinks.strDrinkThumb + "' alt='" + drinks.strDrink + "'/>";
-          html += "<p>" + drinks.strInstructions + "</p>";
+        //drinkList.forEach(drinks => {
+         // html += "<h2>" + drinks.strDrink + "</h2>";
+        //  html += "<img src='" + drinks.strDrinkThumb + "' alt='" + drinks.strDrink + "'/>";
+        //  html += "<p>" + drinks.strInstructions + "</p>";
       });
-
-        recipeDisplay.innerHTML = html;
-      });
+      //ajax
+      //for (let i = 0; i < completedata.length: i++){ // Loop into the result of the request and create an article tag representing a Place in the section.places.
+      jQuery(document).ready(function($) { 
+      $('.recipeDisplay').append("<h2>" + completedata.strDrink + "</h2><img src=" + completedata.strDrinkThumb + "alt=" + completedata.strDrink + "/>");
+    
+      })
+       
+       
+       
+                // recipeDisplay.innerHTML = html;
 
 
 
   </script>
   <a href="index.html">Go back to Home!</a>
-  <div id="recipeDisplay"></div>
+  <div class="recipeDisplay"></div>
 
 
 
