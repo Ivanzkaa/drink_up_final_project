@@ -55,142 +55,127 @@
   </header>
 
   <!--DATA MANAGE-->
-  <script>
-    // Create urlParams query string
-    var urlParams = new URLSearchParams(window.location.search);
+  <div id="data-container">
+    <script>
+      // Create urlParams query string
+      var urlParams = new URLSearchParams(window.location.search);
 
-    // Get value of single parameter
-    var spirit = urlParams.get('spirit');
-    var preference = urlParams.get('preference');
+      // Get value of single parameter
+      var spirit = urlParams.get('spirit');
+      var preference = urlParams.get('preference');
 
-    //print var statements
-    //document.write(urlParams);
-    //document.write(spirit);
-    //document.write(preference);
+      //print var statements
+      //document.write(urlParams);
+      //document.write(spirit);
+      //document.write(preference);
 
-    //variables for API
-    //let url = "https://thecocktaildb.com/api/json/v1/1/filter.php?i=";
-    let drinkName = "";
+      //variables for API
+      //let url = "https://thecocktaildb.com/api/json/v1/1/filter.php?i=";
+      let drinkName = "";
 
-    switch (spirit + preference) {
-      case 'VodkaSweet':
-        drinkName = "Cosmopolitan";
-        document.write(drinkName);
-        break;
-      case 'VodkaSour':
-        drinkName = "Lemon Drop";
-        document.write(drinkName);
-        break;
-      case 'VodkaSalty':
-        drinkName = "Martiny";
-        document.write(drinkName);
-        break;
-      case 'VodkaSpicy':
-        drinkName = "Hot";
-        document.write(drinkName);
-        break;
-      case 'VodkaBitter':
-        drinkName = "Esspresso Martiny";
-        document.log(drinkName);
-        break;
+      switch (spirit + preference) {
+        case 'VodkaSweet':
+          drinkName = "Cosmopolitan";
+          document.write(drinkName);
+          break;
+        case 'VodkaSour':
+          drinkName = "Lemon Drop";
+          document.write(drinkName);
+          break;
+        case 'VodkaSalty':
+          drinkName = "Martiny";
+          document.write(drinkName);
+          break;
+        case 'VodkaSpicy':
+          drinkName = "Hot";
+          document.write(drinkName);
+          break;
+        case 'VodkaBitter':
+          drinkName = "Esspresso Martiny";
+          document.log(drinkName);
+          break;
 
-      default:
-        alert('Please select one of each to get your drink!');
-        break;
-    }
-    //API
+        default:
+          alert('Please select one of each to get your drink!');
+          break;
+      }
+      //API
       let url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
       let api_url = (url + drinkName);
 
       fetch(api_url)
-        .then((response)=> {
+        .then((response) => {
           if (response.ok) {
-          return response.json();
-        } else {
-          throw new Error("NETWORK RESPONSE ERROR");
-        }
-      })
+            return response.json();
+          } else {
+            throw new Error("NETWORK RESPONSE ERROR");
+          }
+        })
         .then((data) => {
           console.log(data);
           recipeDisplay(data)
-      })
-      .catch((error) => console.error("FETCH ERROR:", error));
+        })
+        .catch((error) => console.error("FETCH ERROR:", error));
 
 
-
-        //Display on html
-        //let recipeDisplay = document.getElementById("recipeDisplay");
-       // let drinkList = completedata;  
-        //let html = "";
-
-        //drinkList.forEach(drinks => {
-         // html += "<h2>" + drinks.strDrink + "</h2>";
-        //  html += "<img src='" + drinks.strDrinkThumb + "' alt='" + drinks.strDrink + "'/>";
-        //  html += "<p>" + drinks.strInstructions + "</p>";
-    
-      //ajax
-      //for (let i = 0; i < completedata.length: i++){ // Loop into the result of the request and create an article tag representing a Place in the section.places.
-      //jQuery(document).ready(function($) { 
-      //$('.recipeDisplay').append("<h2>" + completedata.strDrink + "</h2><img src=" + completedata.strDrinkThumb + "alt=" + completedata.strDrink + "/>");
-    
-      //})
-       
-       
-      // recipeDisplay.innerHTML = html;
       function recipeDisplay(data) {
         const cocktail = data.drinks[0];
         const cocktailDiv = document.getElementById("cocktailDisplay");
-      
+
         const cocktailName = cocktail.strDrink;
         const heading = document.createElement("h1");
         heading.innerHTML = cocktailName;
         cocktailDiv.appendChild(heading);
-      
+
         const cocktailImg = document.createElement("img");
         cocktailImg.src = cocktail.strDrinkThumb;
         cocktailDiv.appendChild(cocktailImg);
         document.body.style.backgroundImage = "url('" + cocktail.strDrinkThumb + "')";
-      
+
         const cocktailIngredients = document.createElement("ul");
-        cocktailDiv.appendChild(cocktailIngredients);  
-  
-    const getIngredients = Object.keys(cocktail)
-      .filter(function (ingredient) {
-        return ingredient.indexOf("strIngredient") == 0;
-      })
-      .reduce(function (ingredients, ingredient) {
-        if (cocktail[ingredient] != null) {
-          ingredients[ingredient] = cocktail[ingredient];
+        cocktailDiv.appendChild(cocktailIngredients);
+
+        const getIngredients = Object.keys(cocktail)
+          .filter(function (ingredient) {
+            return ingredient.indexOf("strIngredient") == 0;
+          })
+          .reduce(function (ingredients, ingredient) {
+            if (cocktail[ingredient] != null) {
+              ingredients[ingredient] = cocktail[ingredient];
+            }
+            return ingredients;
+          }, {});
+
+        for (let key in getIngredients) {
+          let value = getIngredients[key];
+          listItem = document.createElement("li");
+          listItem.innerHTML = value;
+          cocktailIngredients.appendChild(listItem);
         }
-        return ingredients;
-      }, {});
-    
-    for (let key in getIngredients) {
-      let value = getIngredients[key];
-      listItem = document.createElement("li");
-      listItem.innerHTML = value;
-      cocktailIngredients.appendChild(listItem);
-  } 
 
       }
 
-  </script>
-  <a href="index.html">Go back to Home!</a>
-  <div id="cocktailDisplay"></div>
+    </script>
+
+    <!-- Cocktail Display -->
+    <div id="cocktailDisplay">
+      <a href="index.html">Go back to Home!</a>
+    </div>
 
 
 
 
 
 
-  <!-- jquery Js -->
-  <script src="JS/jquery-1.12.4.min.js.js"></script>
-  <!-- font awesome js -->
-  <script src="JS/all.js"></script>
-  <!-- Bootsrap Js -->
-  <script src="JS/bootstrap.min.js"></script>
-  <!-- main js -->
-  <script src="JS/main.js"></script>
+    <!-- jquery Js -->
+    <script src="JS/jquery-1.12.4.min.js.js"></script>
+    <!-- font awesome js -->
+    <script src="JS/all.js"></script>
+    <!-- Bootsrap Js -->
+    <script src="JS/bootstrap.min.js"></script>
+    <!-- main js -->
+    <script src="JS/main.js"></script>
+  </div>
 </body>
 
 </html>
