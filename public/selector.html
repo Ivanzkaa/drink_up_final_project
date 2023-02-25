@@ -60,39 +60,87 @@
       // Create urlParams query string
       var urlParams = new URLSearchParams(window.location.search);
 
+      
       // Get value of single parameter
       var spirit = urlParams.get('spirit');
       var preference = urlParams.get('preference');
-
-      //print var statements
-      //document.write(urlParams);
-      //document.write(spirit);
-      //document.write(preference);
-
-      //variables for API
-      //let url = "https://thecocktaildb.com/api/json/v1/1/filter.php?i=";
       let drinkName = "";
-
+      
       switch (spirit + preference) {
         case 'VodkaSweet':
-          drinkName = "Cosmopolitan";
-          document.write(drinkName);
+          drinkName = "sex_on_the_beach";
           break;
         case 'VodkaSour':
-          drinkName = "Lemon Drop";
-          document.write(drinkName);
+          drinkName = "lemon_drop";
           break;
         case 'VodkaSalty':
-          drinkName = "Martiny";
-          document.write(drinkName);
+          drinkName = "dirty_martini";
           break;
         case 'VodkaSpicy':
-          drinkName = "Hot";
-          document.write(drinkName);
+          drinkName = "godmother";
           break;
         case 'VodkaBitter':
-          drinkName = "Esspresso Martiny";
-          document.log(drinkName);
+          drinkName = "cosmopolitan";
+          break;
+        case 'RumSweet':
+          drinkName = "pina_colada";
+          break;
+        case 'RumSour':
+          drinkName = "mojito";
+          break;
+        case 'RumSalty':
+          drinkName = "adios_amigos";
+          break;
+        case 'RumSpicy':
+          drinkName = "dark_and_stormy";
+          break;
+        case 'RumBitter':
+          drinkName = "rum_old-fashioned";
+          break;
+        case 'WhiskeySweet':
+          drinkName = "rusty_nail";
+          break;
+        case 'WhiskeySour':
+          drinkName = "new_york_sour";
+          break;
+        case 'WhiskeySalty':
+          drinkName = "loch_lomond";
+          break;
+        case 'WhiskeySpicy':
+          drinkName = "whisky_mac";
+          break;
+        case 'WhiskeyBitter':
+          drinkName = "boulevardier";
+          break;
+        case 'GinSweet':
+          drinkName = "daisy";
+          break;
+        case 'GinSour':
+          drinkName = "tom_collins";
+          break;
+        case 'GinSalty':
+          drinkName = "salty_dog";
+          break;
+        case 'GinSpicy':
+          drinkName = "gin_basil_smash";
+          break;
+        case 'GinBitter':
+          drinkName = "negroni";
+          break;
+        case 'TequilaSweet':
+          drinkName = "tequila_sunrise";
+          break;
+        case 'TequilaSour':
+          drinkName = "margarita";
+          break;
+        case 'TequilaSalty':
+          drinkName = "vampiro";
+          break;
+        case 'TequilaSpicy':
+          drinkName = "bloody_maria";
+          break;
+        case 'TequilaBitter':
+          drinkName = "paloma";
           break;
 
         default:
