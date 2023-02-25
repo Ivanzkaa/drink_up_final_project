@@ -102,12 +102,19 @@
       let url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
       let api_url = (url + drinkName);
 
-      fetch(api_url).then((data)=>{
-        //console.log(data);
-        return data.json();
-      }).then((completedata)=>{
-        console.log(completedata);
-
+      fetch(api_url)
+        .then((response)=> {
+          if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("NETWORK RESPONSE ERROR");
+        }
+      })
+        .then((data) => {
+          console.log(data);
+          recipeDisplay(data)
+      })
+      .catch((error) => console.error("FETCH ERROR:", error));
 
 
 
@@ -120,23 +127,56 @@
          // html += "<h2>" + drinks.strDrink + "</h2>";
         //  html += "<img src='" + drinks.strDrinkThumb + "' alt='" + drinks.strDrink + "'/>";
         //  html += "<p>" + drinks.strInstructions + "</p>";
-      });
+    
       //ajax
       //for (let i = 0; i < completedata.length: i++){ // Loop into the result of the request and create an article tag representing a Place in the section.places.
-      jQuery(document).ready(function($) { 
-      $('.recipeDisplay').append("<h2>" + completedata.strDrink + "</h2><img src=" + completedata.strDrinkThumb + "alt=" + completedata.strDrink + "/>");
+      //jQuery(document).ready(function($) { 
+      //$('.recipeDisplay').append("<h2>" + completedata.strDrink + "</h2><img src=" + completedata.strDrinkThumb + "alt=" + completedata.strDrink + "/>");
     
+      //})
+       
+       
+      // recipeDisplay.innerHTML = html;
+      function recipeDisplay(data) {
+        const cocktail = data.drinks[0];
+        const cocktailDiv = document.getElementById("cocktailDisplay");
+      
+        const cocktailName = cocktail.strDrink;
+        const heading = document.createElement("h1");
+        heading.innerHTML = cocktailName;
+        cocktailDiv.appendChild(heading);
+      
+        const cocktailImg = document.createElement("img");
+        cocktailImg.src = cocktail.strDrinkThumb;
+        cocktailDiv.appendChild(cocktailImg);
+        document.body.style.backgroundImage = "url('" + cocktail.strDrinkThumb + "')";
+      
+        const cocktailIngredients = document.createElement("ul");
+        cocktailDiv.appendChild(cocktailIngredients);  
+  
+    const getIngredients = Object.keys(cocktail)
+      .filter(function (ingredient) {
+        return ingredient.indexOf("strIngredient") == 0;
       })
-       
-       
-       
-                // recipeDisplay.innerHTML = html;
+      .reduce(function (ingredients, ingredient) {
+        if (cocktail[ingredient] != null) {
+          ingredients[ingredient] = cocktail[ingredient];
+        }
+        return ingredients;
+      }, {});
+    
+    for (let key in getIngredients) {
+      let value = getIngredients[key];
+      listItem = document.createElement("li");
+      listItem.innerHTML = value;
+      cocktailIngredients.appendChild(listItem);
+  } 
 
-
+      }
 
   </script>
   <a href="index.html">Go back to Home!</a>
-  <div class="recipeDisplay"></div>
+  <div id="cocktailDisplay"></div>
 
 
 
