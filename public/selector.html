@@ -18,44 +18,11 @@
 </head>
 
 <body>
-  <header class="header-area">
-    <div class="nav-area">
-      <!-- navbar start -->
-      <div class="container">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-          <div class="container-fluid">
-            <a class="navbar-brand">
-              <img class="drink-up-logo" src="images/Drink Up.png" alt="">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-              aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="about.html">About</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contact</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="meet-the-team.html">Meet the Team</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </div> <!-- navbar end -->
-  </header>
+  <div id="data-container">
+  
 
   <!--DATA MANAGE-->
-  <div id="data-container">
+  
     <script>
       // Create urlParams query string
       var urlParams = new URLSearchParams(window.location.search);
@@ -183,6 +150,10 @@
         const cocktailIngredients = document.createElement("ul");
         cocktailDiv.appendChild(cocktailIngredients);
 
+        const cocktailMeasurements = document.createElement("ul");
+        cocktailDiv.appendChild(cocktailMeasurements);
+
+
         const getIngredients = Object.keys(cocktail)
           .filter(function (ingredient) {
             return ingredient.indexOf("strIngredient") == 0;
@@ -194,11 +165,23 @@
             return ingredients;
           }, {});
 
+          const getMeasurements = Object.keys(cocktail)
+          .filter(function (measure) {
+            return measure.indexOf("strMeasure") == 0;
+          })
+          .reduce(function (measurements, measure) {
+            if (cocktail[measure] != null) {
+              measurements[measure] = cocktail[measure];
+            }
+            return measurements;
+          }, {});
+
         for (let key in getIngredients) {
-          let value = getIngredients[key];
-          listItem = document.createElement("li");
-          listItem.innerHTML = value;
-          cocktailIngredients.appendChild(listItem);
+            let value = getIngredients[key];
+            let value2 = getMeasurements[key];
+            listItem = document.createElement("li");
+            listItem.innerHTML += `${value} - ${value2}`;
+            cocktailIngredients.appendChild(listItem);
         }
 
       }
@@ -225,6 +208,7 @@
     <!-- main js -->
     <script src="JS/main.js"></script>
   </div>
+</div>
 </body>
 
 </html>
