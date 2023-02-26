@@ -18,6 +18,7 @@
 </head>
 
 <body>
+
   <div id="data-container">
   
 
@@ -176,16 +177,29 @@
             return measurements;
           }, {});
 
-        for (let key in getIngredients) {
+        let ingredientName = [];
+          let ingredientMeasure = "";
+          for (let key in getIngredients){
             let value = getIngredients[key];
-            let value2 = getMeasurements[key];
             listItem = document.createElement("li");
-            listItem.innerHTML += `${value} - ${value2}`;
+            listItem.setAttribute('id', 'recipeItem');
+            ingredientName.push(value);
             cocktailIngredients.appendChild(listItem);
-        }
-
+          }
+          let count = 0;
+          for (let key in getMeasurements) {
+            let value = getMeasurements[key];
+            console.log(ingredientName)
+            listItem = document.getElementById("recipeItem");
+            ingredientMeasure = `${value}`
+            listItem.innerHTML = `${ingredientName[count]} - ${ingredientMeasure}`;
+            console.log(listItem.innerHTML);
+            cocktailIngredients.appendChild(listItem);
+            count += 1
+          }
+        
+          
       }
-
     </script>
 
     <!-- Cocktail Display -->
