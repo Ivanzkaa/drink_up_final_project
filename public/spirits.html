@@ -53,7 +53,7 @@
     <header class="header-area">
         <div class="nav-area">
             <!-- navbar start -->
-            <div class="container">
+            <div class="container p-5">
                 <nav class="navbar navbar-expand-lg bg-body-tertiary">
                     <div class="container-fluid">
                         <a class="navbar-brand">
@@ -76,7 +76,7 @@
                                     <a class="nav-link" href="contact.html">Contact</a>
                                 </li>
                                 <li class="nav-item">
-                                  <a class="nav-link" href="meet-the-team.html">Meet the team</a>
+                                    <a class="nav-link" href="meet-the-team.html">Meet the team</a>
                                 </li>
                             </ul>
                         </div>
@@ -86,85 +86,79 @@
         </div> <!-- navbar end -->
     </header>
 
-    <form action="selector.html" method="get">
+    <form class="spirit-form" action="selector.html" method="get">
         <!-- Select spirit -->
-        <div class="spirit-section">
-            <div class="inner-container-spirits">
-                <div class="spirit-text">
-                    <p>
-                        Select your spirit:
-                    </p>
-                </div>
-                <div>
-                    <input type="radio" name="spirit" id="Vodka" value="Vodka" data-icon=''/>
-                    <label for="Vodka">
-                        <div class="column">
-                            <img src="images/vodka-bottle.png" class="bottle-img">
-                        </div>
-                        <p class="bottle-txt">
-                            Vodka
-                        </p>
-                    </label>
-                </div>
-                <div>
-                    <input type="radio" name="spirit" id="Rum" value="Rum"/>
-                    <label for="Rum">
-                        <div class="column">
-                            <img src="images/rum-bottle.png" class="bottle-img">
-                        </div>
-                        <p class="bottle-txt">
-                            Rum
-                        </p>
-                    </label>
-                </div>
-                <div>
-                    <input type="radio" name="spirit" id="Whiskey" value="Whiskey"/>
-                    <label for="Whiskey">
-                        <div class="column">
-                            <img src="images/whiskey-bottle.png" class="bottle-img">
-                        </div>
-                        <p class="bottle-txt">
-                            Whiskey
-                        </p>
-                    </label>
-                </div>
-                <div>
-                    <input type="radio" name="spirit" id="Gin" value="Gin"/>
-                    <label for="Gin">
-                        <div class="column">
-                            <img src="images/gin-bottle.png" class="bottle-img">
-                        </div>
-                        <p class="bottle-txt">
-                            Gin
-                        </p>
-                    </label>
-                </div>
-                <div>
-                    <input type="radio" name="spirit" id="Tequila" value="Tequila"/>
-                    <label for="Tequila">
-                        <div class="column">
-                            <img src="images/tequila-bottle.png" class="bottle-img">
-                        </div>
-                        <p class="bottle-txt">
-                            Tequila
-                        </p>
-                    </label>
-                </div>
+        <div class="container spirits">
+            <div class="spirit-text">
+                First step, choose your spirit preference
             </div>
-        </div>
-
-        <!-- Select Preference -->
-        <div class="inner-container-pref">
+            <div>
+                <input type="radio" name="spirit" id="Vodka" value="Vodka" />
+                <label for="Vodka">
+                    <div class="column">
+                        <img src="images/vodka-bottle.png" class="bottle-img">
+                    </div>
+                    <p class="bottle-txt">
+                        Vodka
+                    </p>
+                </label>
+            </div>
+            <div>
+                <input type="radio" name="spirit" id="Rum" value="Rum" />
+                <label for="Rum">
+                    <div class="column">
+                        <img src="images/rum-bottle.png" class="bottle-img">
+                    </div>
+                    <p class="bottle-txt">
+                        Rum
+                    </p>
+                </label>
+            </div>
+            <div>
+                <input type="radio" name="spirit" id="Whiskey" value="Whiskey" />
+                <label for="Whiskey">
+                    <div class="column">
+                        <img src="images/whiskey-bottle.png" class="bottle-img">
+                    </div>
+                    <p class="bottle-txt">
+                        Whiskey
+                    </p>
+                </label>
+            </div>
+            <div>
+                <input type="radio" name="spirit" id="Gin" value="Gin" />
+                <label for="Gin">
+                    <div class="column">
+                        <img src="images/gin-bottle.png" class="bottle-img">
+                    </div>
+                    <p class="bottle-txt">
+                        Gin
+                    </p>
+                </label>
+            </div>
+            <div>
+                <input type="radio" name="spirit" id="Tequila" value="Tequila" />
+                <label for="Tequila">
+                    <div class="column">
+                        <img src="images/tequila-bottle.png" class="bottle-img">
+                    </div>
+                    <p class="bottle-txt">
+                        Tequila
+                    </p>
+                </label>
+            </div>
+            <!-- Select Preference -->
             <div class="preference-text">
-                <p class="s-text">
-                    And now, choose your palate preference
-                </p>
+                And now, choose your palate preference
             </div>
             <div>
                 <input type="radio" name="preference" id="Sweet" value="Sweet" />
                 <label for="Sweet">
                     <div class="column">
                         <img src="images/sweet-img.png" class="bottle-img">
+                        <p class="bottle-txt">
+                            Sweet
+                        </p>
                     </div>
                     <p class="bottle-txt">
                         Sweet
@@ -176,6 +170,9 @@
                 <label for="Sour">
                     <div class="column">
                         <img src="images/sour-img.png" class="bottle-img">
+                        <p class="bottle-txt">
+                            Sour
+                        </p>
                     </div>
                     <p class="bottle-txt">
                         Sour
@@ -187,6 +184,9 @@
                 <label for="Bitter">
                     <div class="column">
                         <img src="images/bitter-img.png" class="bottle-img">
+                        <p class="bottle-txt">
+                            Bitter
+                        </p>
                     </div>
                     <p class="bottle-txt">
                         Bitter
@@ -198,6 +198,9 @@
                 <label for="Salty">
                     <div class="column">
                         <img src="images/salty-img.png" class="bottle-img">
+                        <p class="bottle-txt">
+                            Salty
+                        </p>
                     </div>
                     <p class="bottle-txt">
                         Salty
@@ -209,16 +212,31 @@
                 <label for="Spicy">
                     <div class="column">
                         <img src="images/spicy-img.png" class="bottle-img">
+                        <p class="bottle-txt">
+                            Spicy
+                        </p>
                     </div>
                     <p class="bottle-txt">
                         Spicy
                     </p>
                 </label>
             </div>
+            <!-- Submit -->
+            <button type="submit" class="btn">Submit</button>
         </div>
         <!-- Submit -->
             <button class="main-btn" onclick="getRecipes()" type="submit">Submit</button>
     </form>
+
+
+
+
+
+
+
+
+
+
     <!-- jquery Js -->
     <script src="JS/jquery-1.12.4.min.js.js"></script>
     <!-- font awesome js -->
