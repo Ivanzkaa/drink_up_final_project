@@ -736,4 +736,9 @@ footer .copyright {
     border-bottom: 1px solid #fff;
   }
 
-
+/* ------ random html (cocktailDisplay) -------*/
+.home-footer {
+    background-color: none;
+    margin: 0 auto;
+    width: fit-content;
+ }
