@@ -782,4 +782,8 @@ section {
     border-bottom: 1px solid #fff;
   }
 
-
+/* ------ random html (cocktailDisplay) -------*/
+.home-footer {
+   margin: 0 auto;
+   width: fit-content;
+}
