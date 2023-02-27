@@ -301,7 +301,7 @@ header {
 /* --- about page --- */
 
 .about-section {
-    background: url(/public/images/about-us-cocktail.jpg) no-repeat left;
+    background: url(../images/about-us-cocktail.jpg) no-repeat left;
     padding: 100px 0;
     margin: 0;
     box-sizing: border-box;
