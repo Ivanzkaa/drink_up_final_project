@@ -1,0 +1,118 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Recipe</title>
+
+    <link rel="icon" type="image/x-icon" href="/public/images/Drink Up.png">
+    <script type="module" src="src/index.js"></script>
+    <!-- font awesome css -->
+    <link rel="stylesheet" href="CSS/all.css">
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+</head>
+
+<body>
+    <div id="data-container">
+    <script>
+        //API
+        let randomUrl = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
+
+
+        fetch(randomUrl)
+            .then((response) => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error("NETWORK RESPONSE ERROR");
+                }
+            })
+            .then((data) => {
+                console.log(data);
+                recipeDisplay(data)
+            })
+            .catch((error) => console.error("FETCH ERROR:", error));
+
+
+        function recipeDisplay(data) {
+            const cocktail = data.drinks[0];
+            const cocktailDiv = document.getElementById("cocktailDisplay");
+
+            const cocktailName = cocktail.strDrink;
+            const heading = document.createElement("h1");
+            heading.innerHTML = cocktailName;
+            cocktailDiv.appendChild(heading);
+
+            const cocktailImg = document.createElement("img");
+            cocktailImg.src = cocktail.strDrinkThumb;
+            cocktailDiv.appendChild(cocktailImg);
+            document.body.style.backgroundImage = "url('" + cocktail.strDrinkThumb + "')";
+
+            const cocktailIngredients = document.createElement("ul");
+            cocktailDiv.appendChild(cocktailIngredients);
+
+            const cocktailMeasurements = document.createElement("ul");
+            cocktailDiv.appendChild(cocktailMeasurements);
+
+
+            const getIngredients = Object.keys(cocktail)
+                .filter(function (ingredient) {
+                    return ingredient.indexOf("strIngredient") == 0;
+                })
+                .reduce(function (ingredients, ingredient) {
+                    if (cocktail[ingredient] != null) {
+                        ingredients[ingredient] = cocktail[ingredient];
+                    }
+                    return ingredients;
+                }, {});
+
+            const getMeasurements = Object.keys(cocktail)
+                .filter(function (measure) {
+                    return measure.indexOf("strMeasure") == 0;
+                })
+                .reduce(function (measurements, measure) {
+                    if (cocktail[measure] != null) {
+                        measurements[measure] = cocktail[measure];
+                    }
+                    return measurements;
+                }, {});
+
+            let ingredientName = [];
+            let ingredientMeasure = "";
+            for (let key in getIngredients) {
+                let value = getIngredients[key];
+                listItem = document.createElement("li");
+                listItem.setAttribute('id', 'recipeItem');
+                ingredientName.push(value);
+                cocktailIngredients.appendChild(listItem);
+            }
+            let count = 0;
+            for (let key in getMeasurements) {
+                let value = getMeasurements[key];
+                console.log(ingredientName)
+                listItem = document.getElementById("recipeItem");
+                ingredientMeasure = `${value}`
+                listItem.innerHTML = `${ingredientName[count]} - ${ingredientMeasure}`;
+                console.log(listItem.innerHTML);
+                cocktailIngredients.appendChild(listItem);
+                count += 1
+            }
+
+
+        }
+    </script>
+    <div id="cocktailDisplay">
+        <a href="index.html">Go back to Home!</a>
+    </div>
+    <div id="overlay"></div>
+</div>
+</body>
+
+</html>

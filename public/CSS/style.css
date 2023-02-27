@@ -420,6 +420,7 @@ header {
     border-color: transparent;
 }
 
+
 /* --- responsive part of the spirits page --- */
 /*
 @media screen and (max-width: 1000px) {
@@ -780,3 +781,5 @@ section {
   #cocktailDisplay li:not(:last-of-type) {
     border-bottom: 1px solid #fff;
   }
+
+
