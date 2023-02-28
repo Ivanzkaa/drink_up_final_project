@@ -19,22 +19,18 @@
 </head>
 
 <body>
-
   <div id="data-container">
-  
-
-  <!--DATA MANAGE-->
-  
+    <!--DATA MANAGE-->
     <script>
       // Create urlParams query string
       var urlParams = new URLSearchParams(window.location.search);
 
-      
+
       // Get value of single parameter
       var spirit = urlParams.get('spirit');
       var preference = urlParams.get('preference');
       let drinkName = "";
-      
+
       switch (spirit + preference) {
         case 'VodkaSweet':
           drinkName = "sex_on_the_beach";
@@ -167,7 +163,7 @@
             return ingredients;
           }, {});
 
-          const getMeasurements = Object.keys(cocktail)
+        const getMeasurements = Object.keys(cocktail)
           .filter(function (measure) {
             return measure.indexOf("strMeasure") == 0;
           })
@@ -179,51 +175,46 @@
           }, {});
 
         let ingredientName = [];
-          let ingredientMeasure = "";
-          for (let key in getIngredients){
-            let value = getIngredients[key];
-            listItem = document.createElement("li");
-            listItem.setAttribute('id', 'recipeItem');
-            ingredientName.push(value);
-            cocktailIngredients.appendChild(listItem);
-          }
-          let count = 0;
-          for (let key in getMeasurements) {
-            let value = getMeasurements[key];
-            console.log(ingredientName)
-            listItem = document.getElementById("recipeItem");
-            ingredientMeasure = `${value}`
-            listItem.innerHTML = `${ingredientName[count]} - ${ingredientMeasure}`;
-            console.log(listItem.innerHTML);
-            cocktailIngredients.appendChild(listItem);
-            count += 1
-          }
-        
-          
+        let ingredientMeasure = "";
+        for (let key in getIngredients) {
+          let value = getIngredients[key];
+          listItem = document.createElement("li");
+          listItem.setAttribute('id', 'recipeItem');
+          ingredientName.push(value);
+          cocktailIngredients.appendChild(listItem);
+        }
+        let count = 0;
+        for (let key in getMeasurements) {
+          let value = getMeasurements[key];
+          console.log(ingredientName)
+          listItem = document.getElementById("recipeItem");
+          ingredientMeasure = `${value}`
+          listItem.innerHTML = `${ingredientName[count]} - ${ingredientMeasure}`;
+          console.log(listItem.innerHTML);
+          cocktailIngredients.appendChild(listItem);
+          count += 1
+        }
       }
     </script>
 
     <!-- Cocktail Display -->
-    <div id="cocktailDisplay">
-      <a href="index.html">Go back to Home!</a>
-    </div>
+    <div id="cocktailDisplay"></div>
     <div id="overlay"></div>
-
-
-
-
-
-
-    <!-- jquery Js -->
-    <script src="JS/jquery-1.12.4.min.js.js"></script>
-    <!-- font awesome js -->
-    <script src="JS/all.js"></script>
-    <!-- Bootsrap Js -->
-    <script src="JS/bootstrap.min.js"></script>
-    <!-- main js -->
-    <script src="JS/main.js"></script>
   </div>
-</div>
+  <footer class="home-footer">
+    <div class="main-btn"><a href="index.html">Go back to Home!</a></div>
+  </footer>
+
+
+  <!-- jquery Js -->
+  <script src="JS/jquery-1.12.4.min.js.js"></script>
+  <!-- font awesome js -->
+  <script src="JS/all.js"></script>
+  <!-- Bootsrap Js -->
+  <script src="JS/bootstrap.min.js"></script>
+  <!-- main js -->
+  <script src="JS/main.js"></script>
+
 </body>
 
 </html>
