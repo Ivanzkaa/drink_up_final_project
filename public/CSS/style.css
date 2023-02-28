@@ -147,15 +147,15 @@ header {
 }
 
 .header-hero-content .header-title {
-    font-size: 50px;
+    font-size: 52px;
     color: #fff;
 }
 
 .header-hero-content .text {
     margin-top: 50px;
-    letter-spacing: 4px;
+    letter-spacing: 3px;
     line-height: 30px;
-    text-align: justify;
+    font-size: 20px;
     color: #fff;
 }
 
