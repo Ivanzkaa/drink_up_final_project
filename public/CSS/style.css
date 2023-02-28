@@ -33,10 +33,6 @@ p {
     margin: 0;
 }
 
-.text {
-    text-indent: 30px;
-}
-
 /* -- button css -- */
 
 .main-btn {
@@ -120,6 +116,10 @@ p {
 
 /* --- home css --- */
 
+col-md-10 {
+    padding: 15px 15px;
+}
+
 header {
     background-color: #fff;
 }
@@ -142,10 +142,7 @@ header {
     position: relative;
     box-shadow: 0 2px 20px -5px rgba(0, 0, 0, 0.9);
     background: #B0C985;
-    padding-top: 7%;
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-bottom: 7%;
+    padding: 15px;
     border-radius: 8px;
 }
 
@@ -357,6 +354,7 @@ header {
 
     .inner-container {
         width: 100%;
+        padding: 45px;
     }
 }
 
@@ -392,7 +390,7 @@ header {
 }
 
 
-.spirits {
+.container-spirits {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 35px;
@@ -401,7 +399,6 @@ header {
     justify-content: center;
     background-color: #B0C985;
     padding-left: 80px;
-    background-color: #B0C985;
     padding-top: 5px;
     padding-bottom: 10px;
 }
@@ -434,26 +431,13 @@ header {
 
 /* --- responsive part of the spirits page --- */
 
-@media screen and (max-width: 1000px) {
-    .spirit-section,
-    .inner-container-spirits {
-        background-size: 100%;
-        padding: 100px 40px;
-        max-width: 100%;
+@media screen and (max-width: 600px) {
+    .container-spirits {
+            width: 100%;
+            font-size: 12px;
+            height: 10px;
+        }
     }
-    }
-
-@media only screen and (max-width: 1000px) {
-    .bottle-img {
-        width: 100%;
-    }
-}
-
-@media only screen and (min-width: 400px) {
-    .bottle-img {
-        width: 100%;
-    }
-}
 
 /* --- Preference section --- */
 
