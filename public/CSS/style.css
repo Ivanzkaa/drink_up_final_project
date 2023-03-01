@@ -147,15 +147,15 @@ header {
 }
 
 .header-hero-content .header-title {
-    font-size: 52px;
+    font-size: 50px;
     color: #fff;
 }
 
 .header-hero-content .text {
     margin-top: 50px;
-    letter-spacing: 3px;
+    letter-spacing: 4px;
     line-height: 30px;
-    font-size: 20px;
+    text-align: justify;
     color: #fff;
 }
 
@@ -378,7 +378,7 @@ header {
 /* --- spirits section --- */
 
 .bottle-img {
-    max-inline-size: 100%;
+    width: 100%;
     block-size: auto;
     height: 180px;
     align-items: center;
@@ -398,9 +398,7 @@ header {
     margin-bottom: 180px;
     justify-content: center;
     background-color: #B0C985;
-    padding-left: 80px;
-    padding-top: 5px;
-    padding-bottom: 10px;
+    
 }
 
 .spirit-text {
@@ -427,16 +425,31 @@ header {
 
 .spirit-form {
     background-color: #B0C985;
+    padding-left: 80px;
+    padding-top: 5px;
+    padding-bottom: 10px;
 }
 
 /* --- responsive part of the spirits page --- */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
+    .spirit-form,
+    .bottle-img,
     .container-spirits {
             width: 100%;
-            font-size: 12px;
-            height: 10px;
+            font-size: 22px;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            padding: 24px;
         }
+    .main-btn,
+    .bottle-txt,
+    .preference-text {
+        width: 100%;
+            font-size: 22px;
+            width: 100%;
+    }
     }
 
 /* --- Preference section --- */
