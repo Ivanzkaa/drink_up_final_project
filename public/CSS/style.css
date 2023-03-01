@@ -153,9 +153,9 @@ header {
 
 .header-hero-content .text {
     margin-top: 50px;
+    font-size: 20px;
     letter-spacing: 4px;
     line-height: 30px;
-    text-align: justify;
     color: #fff;
 }
 
@@ -397,7 +397,7 @@ header {
     margin-top: 150px;
     margin-bottom: 180px;
     justify-content: center;
-    background-color: #B0C985;
+    background-color: transparent;
     
 }
 
@@ -424,7 +424,8 @@ header {
 }
 
 .spirit-form {
-    background-color: #B0C985;
+    background: rgb(252,145,124);
+    background: linear-gradient(0deg, rgba(252,145,124,0.9644549763033176) 25%, rgba(176,201,133,0.9549763033175356) 75%); 
     padding-left: 80px;
     padding-top: 5px;
     padding-bottom: 10px;
