@@ -450,6 +450,10 @@ header {
             font-size: 22px;
             width: 100%;
     }
+    .bottle-img {
+        height: 120px;
+        width: 100%;
+    }
     }
 
 /* --- Preference section --- */
