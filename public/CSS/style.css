@@ -500,6 +500,7 @@ a:hover {
     border-radius: 5px;
     background: #B0C985;
     justify-content: space-between;
+    border-radius: 50%;
 }
 .team .member .member-img {
     position: relative;
