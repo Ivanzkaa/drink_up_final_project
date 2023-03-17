@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Drink up landing page</title>
+  <title>Drink up</title>
   <link rel="icon" type="image/x-icon" href="/public/images/Drink Up.png">
   <script type="module" src="/src/index.js"></script>
   <script src="https://kit.fontawesome.com/0000000000.js" crossorigin="anonymous"></script>
@@ -44,7 +44,7 @@
   <header class="header-area">
     <div class="nav-area">
       <!-- navbar start -->
-      <div class="container">
+      <div class="container p-5">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
           <div class="container-fluid">
             <a class="navbar-brand">
@@ -75,21 +75,23 @@
         </nav>
       </div>
     </div> <!-- navbar end -->
+  </header>
     <div class="header-hero">
       <!-- home -->
-      <div class="container">
+      <div class="container main-idx">
         <div class="row align-items-center justify-content-center justify-content-lg-between">
           <div class="col-lg-6 col-md-10">
             <div class="header-hero-content">
-              <h1 class="header-title"><span>Looking for a new drink?</span></h1>
-              <p class="text">A fast solution to when you want to try out a new different drink but you don't know where
-                to start. Fist select your spirit preference, then your taste preference and lastly choose a drink that
-                we will provide.</p>
+              <h1 class="header-title"><span>Can't decide on a cocktail?<br>Give our drink generator a shake!</span></h1>
+              <p class="text">Just select your favorite spirit and your palate preference and you can easily get a new drink recommendation and recipe!</p>
               <ul>
-                <li><a href="spirits.html" class="main-btn">Try Now</a></li>
+                <li><a href="spirits.html" class="main-btn"><i class="fas fa-glass-martini"></i> &ensp; Cocktail Me!</a></li>
                 <!-- <h1>Random Drink Generator</h1> -->
-                <li> <div id="generate-button">
-                  <button id="generate"><a href="random.html">Fetch me a drink!</a></button>
+                <li> 
+                  <div id="generate-button">
+                  <p class="text">If you are feeling extra lucky!</p><br>
+                  <button class="main-btn" style="background-color: #f6bda5; border: none;" id="generate">
+                    <i class="fas fa-glass-martini"></i> <a href="random.html">Get a Random drink!</a></button>
                   </div>
               </li>
               </ul>
@@ -102,10 +104,7 @@
           </div>
         </div>
       </div>
-    </div>
-  </header>
-
-  <div class="row footer">
+  <footer>
     <div class="social-icons-container">
       <a href="#"><i class="fab fa-facebook"></i></a>
       <a href="#"><i class="fab fa-instagram"></i></a>
@@ -120,11 +119,20 @@
     <span class="copyright">
       Drink Up! © 2023
     </span>
+  </footer>
 </div>
 
 
 
-  <!-- age pop-up -->
+
+
+
+
+
+
+ <!-- age pop-up -->
+ <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+ <div class="elfsight-app-b15e0691-bb7e-48b3-86da-d7b90aba43cc"></div>
   <!-- jquery Js -->
   <script src="JS/jquery-1.12.4.min.js.js"></script>
   <!-- font awesome js -->
